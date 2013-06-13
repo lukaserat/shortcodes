@@ -1,0 +1,239 @@
+<script>
+/*VIEWPORT BUG FIX iOS viewport scaling bug fix, by @mathias, @cheeaun and @jdalton */
+(function(doc){var addEvent='addEventListener',type='gesturestart',qsa='querySelectorAll',scales=[1,1],meta=qsa in doc?doc[qsa]('meta[name=viewport]'):[];function fix(){meta.content='width=device-width,minimum-scale='+scales[0]+',maximum-scale='+scales[1];doc.removeEventListener(type,fix,true);}if((meta=meta[meta.length-1])&&addEvent in doc){fix();scales=[.25,1.6];doc[addEvent](type,fix,true);}}(document));
+</script>
+
+<!-- FONTS -->
+<style type="text/css">
+@import url(http://fonts.googleapis.com/css?family=Open+Sans|Roboto);
+</style>
+<!-- FONTS -->
+
+<!-- RESET -->
+<style type="text/css">
+#sc-main-container, #sc-main-container h1, #sc-main-container h2,  
+#sc-main-container h3, #sc-main-container h4, #sc-main-container h5,
+#sc-main-container h6, #sc-main-container div, #sc-main-container ul,
+#sc-main-container ol, #sc-main-container li, #sc-main-container span,
+#sc-main-container p, #sc-main-container img, #sc-main-container table{
+  margin: 0px;
+	padding: 0px;
+}
+</style>
+<!-- RESET -->
+
+<style type="text/css">
+#sc-main-container{
+	width: 610px;
+	margin: 10px auto;
+	overflow: hidden;
+	color: #fff;
+}
+.sc-row{
+	position: relative;
+	display: block;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+.sc-50{
+	width: 46%;
+	margin: 0% 1%;
+}
+.sc-33{
+	width: 30.3333%;
+	margin: 0% 0.5%; /** 0.5 */
+}
+.sc-45{
+	width: 43.5%;
+	margin: 0% 0.5%;
+}
+.sc-55{
+	width: 53.5%;
+	margin: 0% 0.5%;
+}
+.sc-inlineblock{
+	display: inline-block;
+	vertical-align: top;
+	margin-bottom: 10px;
+}
+.sc-of-hidden{
+	overflow: hidden;
+}
+.sc-hr{
+	height: 4px;
+	border: none;
+	background-repeat: repeat-x;
+	background-position: left;
+	background-image: url(http://x.julianahughes.com/wp-content/uploads/home/hr.jpg);
+}
+.sc-center{
+	margin: 0px auto;
+}
+.sc-text-center{
+	text-align: center;
+}
+.sc-text-right{
+	text-align: right;
+}
+.sc-text-left{
+	text-align: left;
+}
+.sc-img img{
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+}
+.sc-border-box{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+.sc-media img{
+	width: 100%;
+}
+.sc-btn{
+	padding: 8px 12px;
+	background-color: #fff;
+	border: 0px solid #000000;
+	-moz-border-radius: 8px;/*Firefox*/
+	-webkit-border-radius: 8px;/*Safari, Chrome*/
+	border-radius: 8px;
+	display: inline-block;
+}
+.sc-btn span{
+	font-size: 12px;
+	color: #000;
+}
+.sc-red{
+	background-color: red;
+}
+.sc-white{
+	background-color: #ddd;
+}
+.sc-icon{
+	padding-left: 40px;
+	padding-top: 4px;
+	padding-bottom: 8px;
+	background-repeat: no-repeat;
+	background-position: left center;
+	margin: 4px auto;
+}
+.sc-icon h3{
+	font-size: 14px;
+	font-family: 'Tahoma', sans-serif;
+	font-weight: normal;
+	padding: 0px;
+	margin: 0px;
+}
+.sc-fl{
+	float: left;
+}
+.sc-fr{
+	float: right;
+}
+.sc-clearfix{
+	clear: both;
+    content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+</style>
+<style type="text/css">
+#sc-main-container #sc-first-content{
+}
+#sc-main-container #sc-second-content{
+}
+#sc-main-container #sc-third-content{
+}
+#sc-main-container #sc-fourth-content{
+}
+</style>
+<style type="text/css">
+@-ms-viewport {
+  width: device-width;
+}
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: 959px) {
+	#sc-main-container{
+		width: 100%;
+	}
+}
+ 
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	#sc-main-container{
+		width: 100%;
+	}
+	body{
+		background-color: orange;
+	}
+}
+ 
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+	#sc-main-container{
+		width: 100%;
+	}
+	.sc-50{
+		width: 100%;
+		margin: 0% auto;
+	}
+	.sc-33{
+		width: 46%;
+		margin: 0% 1%;
+	}
+	.sc-inlineblock{
+		margin-bottom: 20px;
+	}
+	body{
+		background-color: blue;
+	}
+}
+ 
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	#sc-main-container{
+		width: 100%;
+	}
+	.sc-45, .sc-55{
+		width: 80%;
+		margin: 0% auto;
+	}
+	body{
+		background-color: pink;
+	}
+
+}
+ 
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+	#sc-main-container, .sc-50, .sc-33, .sc-45, .sc-55{
+		width: 100%;
+		margin: 0% auto;
+	}
+	.sc-inlineblock{
+		margin-bottom: 20px;
+	}
+	body{
+		background-color: red;
+	}
+}
+</style>
+<div id="sc-main-container">
+  <!-- First Content -->
+  <div id="sc-first-content" class="sc-border-box sc-row sc-center sc-text-left">
+  </div>
+  <!-- Second Content -->
+  <div id="sc-second-content" class="sc-border-box sc-row sc-center sc-text-left">
+  </div>
+  <!-- Third Content -->
+  <div id="sc-third-content" class="sc-border-box sc-row sc-center sc-text-left">
+  </div>
+  <!-- Fourth Content -->
+  <div id="sc-fourth-content" class="sc-border-box sc-row sc-center sc-text-left">
+  </div>
+</div>
