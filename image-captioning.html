@@ -1,0 +1,116 @@
+footer #affiliates .thumbnail.no-boxshadow{
+  			max-height: 134px !important;
+				overflow: hidden !important;
+			}
+footer #affiliates .thumbnail.no-boxshadow .image-mask{
+	background-color: rgba(240,120,48, 0.54);
+	overflow: hidden;
+	position: absolute;
+	width: 0px;
+	height: 134px;
+	z-index: 1;
+
+	-webkit-transition: all 0.4s ease-in;/* Safari 3.2+, Chrome */
+	-moz-transition: all 0.4s ease-in;/* Firefox 4-15 */
+	-o-transition: all 0.4s ease-in;/* Opera 10.5-12.00 */
+	transition: all 0.4s ease-in;/* Firefox 16+, Opera 12.50+ */
+}
+footer #affiliates .thumbnail.no-boxshadow h3,
+footer #affiliates .thumbnail.no-boxshadow p{
+	color: #F9F9F9;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 14px;
+    margin: 8px 10px 12px;
+}
+footer #affiliates .thumbnail.no-boxshadow h3{
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=0, Direction=0, Color=#333)";/*IE 8*/
+	text-shadow: 0px -1px 0px #333;/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=0, Direction=0, Color=#333); /*IE 5.5-7*/
+
+	font-size: 16px;
+	line-height: 20px;
+	font-family: 'Montserrat Alternates',sans-serif;
+}
+footer #affiliates .thumbnail.no-boxshadow img{
+	background-color: #333;
+}
+
+<div class="row-fluid">
+
+	<ul class="thumbnails">
+		<li class="span12">
+			<div class="thumbnail no-boxshadow">
+				<div class="image-mask">
+					<h3 class="border-box">Thumbnail label</h3>
+					<p class="visible-desktop">Aenean eu velit dictum, accumsan. Aenean porta faucibus tellus, ac.</p>
+				</div>
+				<img src="http://placeimg.com/270/134/any?aa={{ rand(0,10) }}" alt="">
+			</div>
+		</li>
+		<li class="span12">
+			<div class="thumbnail no-boxshadow">
+				<div class="image-mask">
+					<h3 class="border-box">Thumbnail label</h3>
+					<p class="visible-desktop">Aenean eu velit dictum, accumsan. Aenean porta faucibus tellus, ac.</p>
+				</div>
+				<img src="http://placeimg.com/270/134/any?aa={{ rand(0,10) }}" alt="">
+			</div>
+		</li>
+		<li class="span12">
+			<div class="thumbnail no-boxshadow">
+				<div class="image-mask">
+					<h3 class="border-box">Thumbnail label</h3>
+					<p class="visible-desktop">Aenean eu velit dictum, accumsan. Aenean porta faucibus tellus, ac.</p>
+				</div>
+				<img src="http://placeimg.com/270/134/any?aa={{ rand(0,10) }}" alt="">
+			</div>
+		</li>
+	</ul>
+
+</div>
+
+<script type="text/javascript" charset="utf-8" async defer>
+		jQuery(window).load(function($) {
+
+			jQuery("footer #affiliates .thumbnail").each(function(){
+
+				var obj = jQuery(this);
+				var imgObj = obj.find("img");
+				var imagemaskObj = obj.find(".image-mask");
+
+				imagemaskObj.ready(function($) {
+					imagemaskObj.css({
+						left: obj.offset().left + obj.width(),
+						height: obj.height(),
+						width: 4
+					});	
+				});
+
+				obj.hover(function(){
+
+					imagemaskObj.animate({
+						width: obj.width(),
+						height: obj.height(),
+						left: obj.offset().left +4
+					}, {
+						duration: 200 });
+
+				}, function(){
+
+					imagemaskObj.animate({
+						width: 4,
+						height: obj.height(),
+						left: obj.offset().left + obj.width()
+					}, {
+						duration: 200 });
+
+				});
+				
+
+			});
+
+
+		});
+	</script>
