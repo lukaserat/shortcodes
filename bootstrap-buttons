@@ -1,0 +1,30 @@
+.btn-brucelee{
+	background: #60c8d1; /* for non-css3 browsers */
+	background: -moz-linear-gradient(top, #60c8d1,  #31aab5); /* for firefox 3.6+ */ 
+	background: -webkit-gradient(linear, left top, left bottom, from(#60c8d1), to(#31aab5)); /* Safari 4+, Chrome */
+	background: -webkit-linear-gradient(left top, left bottom, #60c8d1, #31aab5); /* Chrome 10+, Safari 5.1+, iOS 5+ */
+	background: -o-linear-gradient(top, #60c8d1,#31aab5); /* Opera 11.10+ */
+	background: -ms-filter:"progid:DXImageTransform.Microsoft.Gradient(StartColorStr=#60c8d1, EndColorStr=#31aab5, GradientType=0)";
+	background: linear-gradient(to bottom, #60c8d1,#31aab5); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#60c8d1', endColorstr='#31aab5', GradientType='0'); /* for IE */
+
+	border: 1px solid #07767f;
+	-moz-border-radius: 0px;/*Firefox*/
+	-webkit-border-radius: 0px;/*Safari, Chrome*/
+	border-radius: 0px;
+
+	margin: 4px auto 0px;
+	padding-top: 10px;
+	padding-bottom: 8px;
+
+	color: #fefefe;
+	font-family: 'Actor', sans-serif;
+	text-transform: uppercase;
+	font-size: 13px;
+	line-height: 1.3;
+	font-weight: normal;
+}
+.btn-brucelee:hover{
+	background: #60c8d1;
+	color: #fefefe;
+}
