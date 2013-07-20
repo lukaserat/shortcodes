@@ -1,5 +1,5 @@
 var img = jQuery('<img>').css({
-    position: 'absolute',
+    position: 'fixed',
     left: '-9999px'
 });
   
